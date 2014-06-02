@@ -1,0 +1,4 @@
+repository "GitHub@workspace-pc:8087"
+  path "/"
+    br "/main"
+    co "/main"

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="wgw3">
+    <head>
+        <title>Angular Bootstrap Transitions</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="author" content="WIGeoGIS">
+		<meta name="author" content="Senthanal Sirpi Manohar">
+		<link rel="icon" type="image/vnd.microsoft.icon" href="_assets/images/favicon.ico">        
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="libs/bootstrap3/core/css/bootstrap.min.css" type="text/css">		
+        
+		
+	<style>
+		.off{
+			color: red;
+		}		
+		.on{
+			color: green;
+		}
+	</style>
+
+		
+    </head>
+    <body>
+		
+		
+		<div 
+			class="container" 
+			style="padding-top: 40px; max-width: 600px;"
+			ng-controller="wgwController"
+		>
+			<div class="text-center"> 
+				<button
+					class="btn"
+					ng-class="toggleEnable === true ? 'btn-defualt' : 'btn-primary'"
+					ng-click="toggleEnable = !toggleEnable"
+				>
+					{{toggleEnable === true ? 'Stop' : 'Start' }}
+				</button>
+			</div>
+			<div class="text-center" style="font-size: 1.5em;"> 
+				<span class="glyphicon" ng-class="sse.status == true ? 'glyphicon-star on' : 'glyphicon-star-empty off'"></span>
+				<span class="glyphicon-class">{{ sse.status == true ? 'Connected' : 'Disconnected' }}</span>
+			</div>
+			<div class="text-center"> Sent Sent Events @ every second follows... </div>
+			<div class="text-center">
+				<div class="alert" ng-class="sse.style">
+					<strong>{{sse.message.title}}</strong> 
+					<span>
+						{{sse.message.content}}
+					</span>
+				</div>
+			</div>
+			<div style="max-height: 300px; overflow: auto;font-size: 0.8em;"> 
+				<p
+					ng-repeat="log in reverse( consoleLog ) track by $index"
+				>
+					{{log}}
+				</p>
+			</div>
+		</div>
+		
+		<!-- jQuery JS -->
+		<script src="libs/jquery/jquery.min.js"></script>
+		
+		<!-- Angular JS -->
+		<script src="libs/angular/angular.min.js"></script>
+        
+		<!-- WGW3 JS -->
+		<script src="app.js"></script>
+	</body>
+</html>
