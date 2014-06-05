@@ -1,0 +1,19 @@
+{
+	"name"			: "LazyLoad Directives",
+	"description"	: "ocLazyLoad angular module testing with directives",
+	"version"		: "0.0.1",
+	"private"		: false,
+	"ignore"		: [
+						"*.bashrc",
+						"*.bowerrc",
+						"*.json"
+	],
+	"dependencies": {
+		"jquery"					: "latest",
+		"angular"					: "1.2.16",
+		"angular-route"				: "1.2.16",
+		"ng-grid"					: "latest",
+		"requirejs"					: "latest",
+		"ocLazyLoad"				: "latest"
+	}
+}

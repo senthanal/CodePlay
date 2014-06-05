@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"/>
+        <link rel="stylesheet" type="text/css" href="libs/ng-grid/ng-grid.css">
+        <style>
+            .gridStyle {
+                border: 1px solid rgb(212, 212, 212);
+                width: 400px;
+                height: 300px
+            }
+        </style>
+        <script type="text/javascript" data-main="js/main" src="libs/requirejs/require.js" charset="UTF8"></script>
+    </head>
+    <body data-ng-controller="mainController">
+        <span>{{test}}</span>
+        <button ng-click="load()">Load Module That Uses ngGrid</button>
+        <div ng-if="persons.visible">
+			<persons></persons>
+		</div>
+    </body>
+</html>
